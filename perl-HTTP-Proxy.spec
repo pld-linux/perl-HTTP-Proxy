@@ -6,13 +6,13 @@
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	HTTP
 %define		pnam	Proxy
-Summary:	A pure Perl HTTP proxy.
+Summary:	A pure Perl HTTP proxy
 Summary(pl):	Proxy HTTP zaimplementowany w czystym Perlu
 Name:		perl-%{pdir}-%{pnam}
 Version:	0.17
 Release:	0.1
-# note if it is "same as perl"
-License:	same as Perl
+# same as perl
+License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	5f8dee810951840408092c07faccfa1a
