@@ -67,5 +67,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changes README
-%{perl_vendorlib}/*
+%{perl_vendorlib}/HTTP/Proxy.pm
+%{perl_vendorlib}/HTTP/Proxy
 %{_mandir}/man3/*
