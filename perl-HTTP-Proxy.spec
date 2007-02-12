@@ -7,7 +7,7 @@
 %define		pdir	HTTP
 %define		pnam	Proxy
 Summary:	A pure Perl HTTP proxy
-Summary(pl):	Proxy HTTP zaimplementowany w czystym Perlu
+Summary(pl.UTF-8):   Proxy HTTP zaimplementowany w czystym Perlu
 Name:		perl-%{pdir}-%{pnam}
 Version:	0.17
 Release:	0.1
@@ -35,14 +35,14 @@ pages.
 The most interesting feature of this proxy object is its ability to
 filter the HTTP requests and responses through user-defined filters.
  
-%description -l pl
-Ten modu³ implementuje proxy HTTP, u¿ywaj±c HTTP::Daemon do
-przyjmowania po³±czeñ klienckich i LWP::UserAgent do pobierania
-¿±danych stron.
+%description -l pl.UTF-8
+Ten moduÅ‚ implementuje proxy HTTP, uÅ¼ywajÄ…c HTTP::Daemon do
+przyjmowania poÅ‚Ä…czeÅ„ klienckich i LWP::UserAgent do pobierania
+Å¼Ä…danych stron.
 
-Najciekawsz± opcj± tego obiektu proxy jest mo¿liwo¶æ filtrowania
-zapytañ i odpowiedzi HTTP poprzez filtry definiowane przez
-u¿ytkownika.
+NajciekawszÄ… opcjÄ… tego obiektu proxy jest moÅ¼liwoÅ›Ä‡ filtrowania
+zapytaÅ„ i odpowiedzi HTTP poprzez filtry definiowane przez
+uÅ¼ytkownika.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
