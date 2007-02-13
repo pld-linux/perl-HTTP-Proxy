@@ -7,7 +7,7 @@
 %define		pdir	HTTP
 %define		pnam	Proxy
 Summary:	A pure Perl HTTP proxy
-Summary(pl.UTF-8):   Proxy HTTP zaimplementowany w czystym Perlu
+Summary(pl.UTF-8):	Proxy HTTP zaimplementowany w czystym Perlu
 Name:		perl-%{pdir}-%{pnam}
 Version:	0.17
 Release:	0.1
