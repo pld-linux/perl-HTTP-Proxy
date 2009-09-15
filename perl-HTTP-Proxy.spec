@@ -9,20 +9,20 @@
 Summary:	A pure Perl HTTP proxy
 Summary(pl.UTF-8):	Proxy HTTP zaimplementowany w czystym Perlu
 Name:		perl-%{pdir}-%{pnam}
-Version:	0.20
-Release:	0.1
+Version:	0.24
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	a5788ffa3a82796ee990cb0fc18b4c6c
+# Source0-md5:	a3c3b7df0339c0251c952a6fc00da5e8
 URL:		http://search.cpan.org/dist/HTTP-Proxy/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with autodeps} || %{with tests}
-BuildRequires:	perl-libwww
 BuildRequires:	perl(HTTP::Daemon) >= 1.25
 BuildRequires:	perl(LWP::UserAgent) >= 2
+BuildRequires:	perl-libwww >= 1.25
 %endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -34,7 +34,7 @@ pages.
 
 The most interesting feature of this proxy object is its ability to
 filter the HTTP requests and responses through user-defined filters.
- 
+
 %description -l pl.UTF-8
 Ten moduł implementuje proxy HTTP, używając HTTP::Daemon do
 przyjmowania połączeń klienckich i LWP::UserAgent do pobierania
@@ -61,6 +61,9 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} pure_install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+cp -a eg $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -70,3 +73,4 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorlib}/HTTP/Proxy.pm
 %{perl_vendorlib}/HTTP/Proxy
 %{_mandir}/man3/*
+%{_examplesdir}/%{name}-%{version}
