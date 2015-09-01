@@ -1,11 +1,13 @@
+# TODO
+# - tests are disabled as one is broken: https://github.com/book/HTTP-Proxy/issues/7
 #
 # Conditional build:
 %bcond_without  autodeps	# don't BR packages needed only for resolving deps
-%bcond_without	tests		# do not perform "make test"
-#
-%include	/usr/lib/rpm/macros.perl
+%bcond_with	tests		# do not perform "make test"
+
 %define		pdir	HTTP
 %define		pnam	Proxy
+%include	/usr/lib/rpm/macros.perl
 Summary:	A pure Perl HTTP proxy
 Summary(pl.UTF-8):	Proxy HTTP zaimplementowany w czystym Perlu
 Name:		perl-%{pdir}-%{pnam}
@@ -52,18 +54,15 @@ użytkownika.
 	INSTALLDIRS=vendor
 
 %{__make}
-
-# disable tests as one is broken: https://github.com/book/HTTP-Proxy/issues/7
-#%%{?with_tests:%{__make} test}
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 %{__make} pure_install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
-cp -a eg $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+cp -a eg/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
