@@ -9,13 +9,13 @@
 Summary:	A pure Perl HTTP proxy
 Summary(pl.UTF-8):	Proxy HTTP zaimplementowany w czystym Perlu
 Name:		perl-%{pdir}-%{pnam}
-Version:	0.24
+Version:	0.304
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	a3c3b7df0339c0251c952a6fc00da5e8
+# Source0-md5:	09ac64c5f67b7d8baff4ea135d74af48
 URL:		http://search.cpan.org/dist/HTTP-Proxy/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
@@ -72,5 +72,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc Changes README
 %{perl_vendorlib}/HTTP/Proxy.pm
 %{perl_vendorlib}/HTTP/Proxy
-%{_mandir}/man3/*
+%{_mandir}/man3/*.3*
 %{_examplesdir}/%{name}-%{version}
