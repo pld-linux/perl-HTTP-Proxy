@@ -7,7 +7,6 @@
 
 %define		pdir	HTTP
 %define		pnam	Proxy
-%include	/usr/lib/rpm/macros.perl
 Summary:	A pure Perl HTTP proxy
 Summary(pl.UTF-8):	Proxy HTTP zaimplementowany w czystym Perlu
 Name:		perl-%{pdir}-%{pnam}
